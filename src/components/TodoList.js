@@ -19,7 +19,7 @@ function TodoList() {
 
       setTodos(data);
     } catch (error) {
-      alert("Error al cargar los todos");
+      alert("Error al cargar los todos. ", http.error);
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ function TodoList() {
         );
       }
     } catch (error) {
-      alert("Error al actualizar");
+      alert("Error al actualizar el todos. ", http.error);
     }
   };
 
@@ -67,7 +67,7 @@ function TodoList() {
         setTodos(todos.filter((todo) => todo.id !== id));
       }
     } catch (error) {
-      alert("Error al eliminar");
+      alert("Error al eliminar el todo. ", http.error);
     }
 
     if (!loading) {
