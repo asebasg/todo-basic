@@ -50,4 +50,64 @@ function TodoList() {
       alert("Error al actualizar");
     }
   };
+
+  // DELETE - Eliminar todo
+  const deleteTodo = async (id) => {
+    if (!window.confirm("Desea eliminar este todo?")) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3001/todos/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // Remover del estado local
+        setTodos(todos.filter((todo) => todo.id !== id));
+      }
+    } catch (error) {
+      alert("Error al eliminar");
+    }
+
+    if (!loading) {
+      return <div>Cargando...</div>;
+    }
+
+    return (
+      <div>
+        <h2>Mis Todos</h2>
+
+        <Link to="/add">+ Agregar Nuevo Todo</Link>
+
+        {todos.length === 0 ? (
+          <p>
+            No hay todos. <Link to="/add">Crear el primero</Link>
+          </p>
+        ) : (
+          <ul>
+            {todos.map((todo) => (
+              <li key={todo.id}>
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleComplete(todo.id, todo.completed)}
+                />
+
+                <span
+                  style={{
+                    textDecoration: todo.completed ? "line-through" : "none",
+                  }}
+                >
+                  {todo.title}
+                </span>
+
+                <button onClick={() => deleteTodo(todo.id)}>Eliminar</button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  };
 }
