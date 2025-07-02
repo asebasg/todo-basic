@@ -7,7 +7,7 @@ function TodoList() {
 
   // Cargar todos al montar el componente
   useEffect(() => {
-    loadTodos();
+    loadTodos(); 
   }, []);
 
   // GET - Obtener todos los todos
@@ -111,3 +111,5 @@ function TodoList() {
     );
   };
 }
+
+export default TodoList;
