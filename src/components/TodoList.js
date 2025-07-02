@@ -24,4 +24,30 @@ function TodoList() {
       setLoading(false);
     }
   };
+
+  // PATCH - Cambiar estado completado
+  const toggleCompleted = async (id, completed) => {
+    try {
+      const response = await fetch(`http://localhost:3001/todos/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          completed: !completed,
+        }),
+      });
+
+      if (response.ok) {
+        // Actualizar estado local
+        setTodos(
+          todos.map((todo) =>
+            todo.id === id ? { ...todo, completed: !completed } : todo
+          )
+        );
+      }
+    } catch (error) {
+      alert("Error al actualizar");
+    }
+  };
 }
