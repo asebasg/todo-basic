@@ -12,14 +12,14 @@ function App() {
         {/* Navegacion simple */}
         <nav>
           <Link to="/">Inicio</Link>
-          <Link to="/todo">Mis to-do</Link>
+          <Link to="/todos">Mis to-do</Link>
           <Link to="/add">Agregar to-do</Link>
         </nav>
 
         {/* Rutas */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/todo" element={<TodoList />} />
+          <Route path="/todos" element={<TodoList />} />
           <Route path="/add" element={<AddTodo />} />
         </Routes>
       </div>
