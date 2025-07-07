@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Todo Basic React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrollada con React y JSON Server. Permite a los usuarios crear, visualizar, actualizar y eliminar tareas de manera sencilla.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Estructura del Proyecto
 
-### `npm start`
+- **db.json**  
+  Archivo que contiene los datos iniciales de las tareas (todos) para JSON Server.  
+  Ejemplo de estructura:
+  ```json
+  {
+    "todos": [
+      {
+        "id": 1,
+        "title": "Aprender React",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "title": "Hacer ejercicio",
+        "completed": true
+      }
+    ]
+  }
+  ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **package.json**  
+  Contiene las dependencias y scripts del proyecto.  
+  El script `"server"` inicia JSON Server en el puerto 3001 para simular una API REST.  
+  El script `"start"` inicia la aplicación React (requiere que las dependencias estén instaladas).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **public/**  
+  Archivos estáticos y configuración base para la aplicación React.
 
-### `npm test`
+- **src/**  
+  Código fuente de la aplicación React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - **App.js**  
+    Componente principal que configura las rutas usando React Router.  
+    Rutas principales:
+    - `/` → Componente `Home`
+    - `/todos` → Componente `TodoList`
+    - `/add` → Componente `AddTodo`
 
-### `npm run build`
+  - **components/**  
+    Carpeta que contiene los componentes React:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - **Home.js**  
+      Componente de bienvenida con un mensaje simple.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - **TodoList.js**  
+      Componente que muestra la lista de tareas obtenidas desde JSON Server.  
+      Permite:
+      - Visualizar todas las tareas.
+      - Marcar tareas como completadas o no completadas.
+      - Eliminar tareas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - **AddTodo.js**  
+      Componente con un formulario para agregar nuevas tareas.  
+      Envía la nueva tarea a JSON Server mediante una petición POST.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Cómo ejecutar el proyecto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clonar el repositorio y navegar a la carpeta del proyecto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Instalar las dependencias de Node.js:
+   ```
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Iniciar JSON Server para simular la API REST:
+   ```
+   npm run server
+   ```
+   Esto levantará el servidor en `http://localhost:3001`.
 
-## Learn More
+4. En otra terminal, iniciar la aplicación React:
+   ```
+   npm start
+   ```
+   Esto abrirá la aplicación en `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notas importantes
 
-### Code Splitting
+- El proyecto requiere que las dependencias estén correctamente instaladas para que `react-scripts` funcione y la app React se ejecute sin problemas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- JSON Server simula un backend RESTful para facilitar el desarrollo y pruebas sin necesidad de un servidor real.
 
-### Analyzing the Bundle Size
+- La aplicación permite gestionar tareas básicas: crear, listar, actualizar estado y eliminar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Posibles mejoras
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Manejo avanzado de errores y validaciones en el frontend.
 
-### Advanced Configuration
+- Añadir edición de tareas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Mejorar la interfaz de usuario con estilos y animaciones.
 
-### Deployment
+- Implementar autenticación y persistencia real con un backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este README resume la estructura y funcionalidad del proyecto para facilitar su comprensión y uso.
