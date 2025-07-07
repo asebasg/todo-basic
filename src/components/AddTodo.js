@@ -12,7 +12,7 @@ function AddTodo() {
     e.preventDefault();
 
     //Validacion basica
-    if (title.trim()) {
+    if (!title.trim()) {
       alert("Por favor, escribe un titulo");
       return;
     }
