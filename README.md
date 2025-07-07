@@ -9,6 +9,7 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
 - **db.json**  
   Archivo que contiene los datos iniciales de las tareas (todos) para JSON Server.  
   Ejemplo de estructura:
+
   ```json
   {
     "todos": [
@@ -68,20 +69,25 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
 1. Clonar el repositorio y navegar a la carpeta del proyecto.
 
 2. Instalar las dependencias de Node.js:
-   ```
+
+   ```txt
    npm install
    ```
 
 3. Iniciar JSON Server para simular la API REST:
-   ```
+
+   ```txt
    npm run server
    ```
+
    Esto levantará el servidor en `http://localhost:3001`.
 
 4. En otra terminal, iniciar la aplicación React:
-   ```
+
+   ```txt
    npm start
    ```
+
    Esto abrirá la aplicación en `http://localhost:3000`.
 
 ---
@@ -107,5 +113,3 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
 - Implementar autenticación y persistencia real con un backend.
 
 ---
-
-Este README resume la estructura y funcionalidad del proyecto para facilitar su comprensión y uso.
