@@ -58,7 +58,7 @@ function TodoList() {
 
     try {
       const response = await fetch(`http://localhost:3001/todos/${id}`, {
-        method: 'DELETE',
+        method: 'DELETE', 
       });
 
       if (response.ok) {
