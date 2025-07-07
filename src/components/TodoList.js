@@ -1,34 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Cargar los to-do al montar el componente
+  // Cargar todos al montar el componente
   useEffect(() => {
     loadTodos();
   }, []);
 
-  // GET - Obtener todos los to-do
+  // GET - Obtener todos los todos
   const loadTodos = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3001/todos");
+      const response = await fetch('http://localhost:3001/todos');
       const data = await response.json();
       setTodos(data);
     } catch (error) {
-      alert("Error al mostrar los to-do");
+      alert('Error al cargar los todos');
     } finally {
       setLoading(false);
     }
   };
 
   // PATCH - Cambiar estado completado
-  const toggleComplete = async(id, completed) => {
+  const toggleComplete = async (id, completed) => {
     try {
-        setLoading(true)
-        const response = await fetch(`http://localhost:3001/todos/${id}`, {
+      const response = await fetch(`http://localhost:3001/todos/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -37,51 +36,54 @@ function TodoList() {
           completed: !completed
         }),
       });
-        if (response.ok) {
-            // Actualizar estado local
-            setTodos(todos.map(todo =>
+
+      if (response.ok) {
+        // Actualizar estado local
+        setTodos(todos.map(todo =>
           todo.id === id
             ? { ...todo, completed: !completed }
             : todo
         ));
-        }
+      }
     } catch (error) {
-        alert('No se pudo actualizar el to-do')
+      alert('Error al actualizar');
     }
-  }
+  };
 
-  // DELETE - Eliminar un to-do
+  // DELETE - Eliminar todo
   const deleteTodo = async (id) => {
-    if (!window.confirm(`¿Deseas eliminar este to-do con la id ${id}?`)) {
-        return;
-  }
-  try {
-    const response = await fetch(`http://localhost:3001/todos/${id}`, {
-        method: 'DELETE',
-    })
+    if (!window.confirm('¿Eliminar este todo?')) {
+      return;
+    }
 
-    if(response.ok) {
+    try {
+      const response = await fetch(`http://localhost:3001/todos/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
         // Remover del estado local
         setTodos(todos.filter(todo => todo.id !== id));
+      }
+    } catch (error) {
+      alert('Error al eliminar');
     }
-  } catch (error) {
-      alert('Error al eliminar el to-do')
-    }
+  };
+
+  if (loading) {
+    return <div>Cargando...</div>;
   }
-  
-    if(loading) {
-      return <div>Cargando...</div>
-    }
 
   return (
     <div>
-        <h2>Mis to-do</h2>
-        <Link to="/add">+ Agregar un nuevo to-do</Link>
+      <h2>Mis Todos</h2>
 
-        {todos.length === 0 ? (
-            <p>No hay to-do disponibles</p>
-        ) : (
-            <ul>
+      <Link to="/add">+ Agregar Nuevo Todo</Link>
+
+      {todos.length === 0 ? (
+        <p>No hay todos. <Link to="/add">Crear el primero</Link></p>
+      ) : (
+        <ul>
           {todos.map(todo => (
             <li key={todo.id}>
               <input
@@ -90,13 +92,16 @@ function TodoList() {
                 onChange={() => toggleComplete(todo.id, todo.completed)}
               />
 
-              <span style={{textDecoration : todo.completed ? 'line-through' : 'none'}}>
+              <span style={{
+                textDecoration: todo.completed ? 'line-through' : 'none'
+              }}>
                 {todo.title}
               </span>
-<button onClick={() => deleteTodo(todo.id)}>
+
+              <button onClick={() => deleteTodo(todo.id)}>
                 Eliminar
               </button>
-                    </li>
+            </li>
           ))}
         </ul>
       )}
