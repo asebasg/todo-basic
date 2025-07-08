@@ -64,6 +64,18 @@ button {
   background: rgba(255, 0, 0, 0.671);
 }
 
+.cancel-button:hover {
+  background: rgba(223, 0, 0, 0.671);
+}
+
+.add-todo-btn {
+  background: rgb(59, 194, 59);
+}
+
+.add-todo-btn:hover {
+  background: rgba(59, 194, 59, 0.897);
+}
+
 button:hover {
   background: #0056b3;
 }
