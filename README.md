@@ -7,8 +7,8 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
 ## Estructura del Proyecto
 
 - **db.json**  
-  Archivo que contiene los datos iniciales de las tareas (todos) para JSON Server.  
-  Ejemplo de estructura:
+   Archivo que contiene los datos iniciales de las tareas (todos) para JSON Server.  
+   Ejemplo de estructura:
 
   ```json
   {
@@ -22,6 +22,11 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
         "id": 2,
         "title": "Hacer ejercicio",
         "completed": true
+      },
+      {
+        "id": 3,
+        "title": "Enviar commits al repositorio",
+        "completed": false
       }
     ]
   }
@@ -41,6 +46,7 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
   - **App.js**  
     Componente principal que configura las rutas usando React Router.  
     Rutas principales:
+
     - `/` → Componente `Home`
     - `/todos` → Componente `TodoList`
     - `/add` → Componente `AddTodo`
@@ -54,6 +60,7 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
     - **TodoList.js**  
       Componente que muestra la lista de tareas obtenidas desde JSON Server.  
       Permite:
+
       - Visualizar todas las tareas.
       - Marcar tareas como completadas o no completadas.
       - Eliminar tareas.
