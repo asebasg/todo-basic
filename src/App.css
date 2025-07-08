@@ -60,6 +60,10 @@ button {
   margin-right: 10px;
 }
 
+.cancel-button {
+  background: rgba(255, 0, 0, 0.671);
+}
+
 button:hover {
   background: #0056b3;
 }

@@ -47,7 +47,7 @@ function AddTodo() {
 
   return (
     <div>
-      <h2>Agregar To do</h2>
+      <h2>Agregar To-Do</h2>
       <form onSubmit={handleSubmitt}>
         <div>
           <label>Titulo</label>
@@ -64,6 +64,7 @@ function AddTodo() {
             {loading ? "Guardando..." : "Agregar To-do"}
           </button>
           <button
+            className="cancel-button"
             type="button"
             onClick={() => navigate("/todos")}
             disabled={loading}

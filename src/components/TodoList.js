@@ -78,7 +78,7 @@ function TodoList() {
     <div>
       <h2>Mis Todos</h2>
 
-      <Link to="/add">+ Agregar Nuevo Todo</Link>
+      <Link to="/add">+ Agregar Nuevo To-Do</Link>
 
       {todos.length === 0 ? (
         <p>No hay todos. <Link to="/add">Crear el primero</Link></p>
