@@ -14,6 +14,16 @@
       "id": 3,
       "title": "Enviar commits al repositorio",
       "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Leer La Campana de Cristal",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Cocinar el almuerzo",
+      "completed": true
     }
   ]
 }
