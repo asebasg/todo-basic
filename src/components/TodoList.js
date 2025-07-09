@@ -73,7 +73,7 @@ function TodoList() {
 
   const redirect = () => {
     navigate("/add");
-  }
+  };
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -108,7 +108,9 @@ function TodoList() {
               >
                 {todo.title}
               </span>
-
+              <button className="edit-button" onClick={() => navigate(`edit/${todo.id}`)}>
+                Editar
+              </button>
               <button onClick={() => deleteTodo(todo.id)}>Eliminar</button>
             </li>
           ))}
