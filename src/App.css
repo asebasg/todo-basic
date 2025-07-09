@@ -118,3 +118,15 @@ li button {
 li button:hover {
   background: #c82333;
 }
+
+.edit-button {
+  background: rgba(0, 0, 255, 0.712);
+}
+
+.edit-button:hover {
+  background: rgb(0, 0, 255);
+}
+
+.todo-id {
+  pointer-events: none;
+}
