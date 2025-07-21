@@ -25,6 +25,9 @@ function App() {
           <Route path="/todos/edit/:id" element={<EditTodo />} />
         </Routes>
       </div>
+      <footer>
+        <p>© 2025 - Desarrollado por <strong>Sebastian Ospina Guzman</strong></p>
+      </footer>
     </Router>
   );
 }
