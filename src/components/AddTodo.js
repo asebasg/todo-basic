@@ -46,7 +46,7 @@ function AddTodo() {
   };
 
   return (
-    <div>
+    <div className="add-todo">
       <h2>Agregar To-Do</h2>
       <form onSubmit={handleSubmitt}>
         <div>

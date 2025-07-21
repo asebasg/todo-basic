@@ -80,8 +80,9 @@ function TodoList() {
   }
 
   return (
-    <div>
+    <div className="todo-list">
       <h2>Mis Todos</h2>
+      <p>Lista de todos los to-do disponibles.</p>
 
       <button onClick={redirect} className="add-todo-btn">
         + Agregar Nuevo To-Do
@@ -108,7 +109,10 @@ function TodoList() {
               >
                 {todo.title}
               </span>
-              <button className="edit-button" onClick={() => navigate(`edit/${todo.id}`)}>
+              <button
+                className="edit-button"
+                onClick={() => navigate(`edit/${todo.id}`)}
+              >
                 Editar
               </button>
               <button onClick={() => deleteTodo(todo.id)}>Eliminar</button>

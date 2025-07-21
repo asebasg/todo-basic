@@ -68,7 +68,7 @@ function EditTodo() {
   };
 
   return (
-    <div>
+    <div className="edit-todo">
       <h2>Editar To-Do</h2>
       <form onSubmit={editTodo}>
         <div>
