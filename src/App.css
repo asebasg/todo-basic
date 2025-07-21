@@ -1,8 +1,13 @@
 .App {
-  max-width: 1000px;
+  max-width: auto;
   margin: 0 auto;
   padding: auto;
   font-family: Arial, sans-serif;
+
+  /* Agregado para pie de página fijo */
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navegación */
@@ -17,8 +22,7 @@ nav {
 
 nav a {
   /* margin-right: 20px; */
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 8px 20px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -27,18 +31,36 @@ nav a {
 nav a:hover {
   color: #007bff;
   transition: all 0.3s ease;
+  background-color: #d5eeff;
+  border-radius: 5px;
 }
 
-.content {
+.home-content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  /* flex-grow: 1; Added to make content area grow */
 }
 
-.content h1 {
+.home-content h1 {
   margin: auto;
   /* padding: 8px; */
+}
+
+h2 {
+  margin: auto;
+}
+
+/* Secciones de contenido */
+
+div .todo-list,
+.edit-todo,
+.add-todo {
+  margin: 0 auto;
+  width: 80%;
 }
 
 /* Formularios */
@@ -95,11 +117,19 @@ button {
 
 button:hover {
   background: #0056b3;
+  transition: all 0.3s ease;
 }
 
 button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+/* Navegacion */
+.navigate-button {
+  margin: 0.8rem;
+  padding: 10px 20px;
+  font-weight: 600;
 }
 
 /* Lista de todos */
@@ -146,4 +176,11 @@ li button:hover {
 
 .todo-id {
   pointer-events: none;
+}
+
+footer {
+  margin: 50px;
+  font-weight: 100;
+  font-size: 14.5px;
+  text-align: end;
 }
