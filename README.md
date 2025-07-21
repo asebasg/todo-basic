@@ -4,6 +4,21 @@ Este proyecto es una aplicación simple de gestión de tareas (To-Do) desarrolla
 
 ---
 
+## Inicialización del proyecto
+
+Para inicializar el proyecto, debes de tener instalado Node.js, además de ejecutar en dos terminales los siguientes comandos:
+**Primera terminal**:
+
+```bash
+npm run server
+```
+
+**Segunda terminal**:
+
+```bash
+npm run start
+```
+
 ## Estructura del Proyecto
 
 - **db.json**  
