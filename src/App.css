@@ -177,6 +177,11 @@ li button:hover {
   pointer-events: none;
 }
 
+.todo-status-img {
+  width: 20px;
+  height: auto;
+}
+
 footer {
   display: flex;
   justify-content: flex-end;
