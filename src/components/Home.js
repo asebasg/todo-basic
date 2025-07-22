@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import RouteButton from "./RouteButton";
 
 function Home() {
   const navigate = useNavigate();
@@ -8,9 +9,10 @@ function Home() {
     <div className="home-content">
       <h1>Bienvenido a To-Do App</h1>
       <p>Esta es una app simple pero funcional, ¡vamos a probarla!</p>
-      <button onClick={() => navigate("/todos")} className="navigate-button">
+      <RouteButton onClick={() => navigate("/todos")} />
+      {/* <button onClick={() => navigate("/todos")} className="navigate-button">
         Ir a listas
-      </button>
+      </button> */}
     </div>
   );
 }
