@@ -55,7 +55,6 @@ h2 {
 }
 
 /* Secciones de contenido */
-
 div .todo-list,
 .edit-todo,
 .add-todo {
@@ -179,7 +178,7 @@ li button:hover {
 }
 
 footer {
-  margin: 50px;
+  margin: 55px 20px;
   font-weight: 100;
   font-size: 14.5px;
   text-align: end;
