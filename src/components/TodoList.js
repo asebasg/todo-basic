@@ -53,7 +53,7 @@ function TodoList() {
 
   // DELETE - Eliminar todo
   const deleteTodo = async (id) => {
-    if (!window.confirm("¿Eliminar este todo?")) {
+    if (!window.confirm("¿Deseas eliminar este todo?")) {
       return;
     }
 
