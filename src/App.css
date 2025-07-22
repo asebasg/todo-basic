@@ -107,11 +107,11 @@ button {
 }
 
 .add-todo-btn {
-  background: rgb(59, 194, 59);
+  background: #3aa856;
 }
 
 .add-todo-btn:hover {
-  background: rgba(59, 194, 59, 0.897);
+  background: #34974d;
 }
 
 button:hover {
