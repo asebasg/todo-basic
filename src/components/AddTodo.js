@@ -20,12 +20,26 @@ function AddTodo() {
     setLoading(true);
 
     try {
+      // Fetch current todos to find max ID
+      const todosResponse = await fetch("http://localhost:3001/todos");
+      if (!todosResponse.ok) {
+        throw new Error("Error al obtener los todos");
+      }
+      const todos = await todosResponse.json();
+      // Find max numeric ID
+      const maxId = todos.reduce((max, todo) => {
+        const idNum = parseInt(todo.id, 10);
+        return idNum > max ? idNum : max;
+      }, 0);
+      const newId = maxId + 1;
+
       const response = await fetch("http://localhost:3001/todos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          id: newId.toString(),
           title: title.trim(),
           completed: false,
         }),
