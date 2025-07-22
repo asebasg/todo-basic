@@ -177,8 +177,16 @@ li button:hover {
   pointer-events: none;
 }
 
+.todo-status-img {
+  width: 20px;
+  height: auto;
+}
+
 footer {
-  margin: 55px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 25px 50px;
   font-weight: 100;
   font-size: 14.5px;
   text-align: end;

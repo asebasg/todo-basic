@@ -5,6 +5,8 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const redCircle = "/red-circle.png";
+  const greenCircle = "/green-circle.png";
 
   // Cargar todos al montar el componente
   useEffect(() => {
@@ -96,6 +98,11 @@ function TodoList() {
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
+              <img
+                src={todo.completed ? greenCircle : redCircle}
+                alt="Estado"
+                className="todo-status-img"
+              />
               <input
                 type="checkbox"
                 checked={todo.completed}
