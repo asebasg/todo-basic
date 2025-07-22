@@ -180,6 +180,7 @@ li button:hover {
 .todo-status-img {
   width: 20px;
   height: auto;
+  pointer-events: none;
 }
 
 footer {
