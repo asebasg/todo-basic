@@ -176,7 +176,6 @@ li button:hover {
 .todo-id {
   pointer-events: none;
 }
-
 .todo-status-img {
   width: 20px;
   height: auto;
